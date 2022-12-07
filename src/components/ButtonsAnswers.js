@@ -9,9 +9,9 @@ export default function ButtonsAnswers(props) {
       {/* {props.questions.map((question) => (
         <Question q={question} />
       ))} */}
-      {props.questions}
+      {/* {props.questions} */}
       <div className="buttons">
-        {props.correctAnswers.map((answer) => (
+        {props.answers.map((answer) => (
           <button
             style={style}
             onClick={props.isHeld}

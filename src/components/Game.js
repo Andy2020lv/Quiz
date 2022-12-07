@@ -13,7 +13,7 @@ export default function Game(props) {
   // make a button for each of them.
   //   3. Pass the questions as a component and map though the questions array
   // console.log(props.answers[0]);
-
+  console.log(props.answers);
   return (
     <div className="game">
       {/* {props.answers.map((answer) => (
@@ -26,11 +26,8 @@ export default function Game(props) {
           key={props.key}
         />
       {/* ))} */}
-
-      <ButtonsAnswers
-        questions=<Question questions={props.questions} />
-        correctAnswers={props.correctAnswers}
-      />
+      <Question questions={props.questions} />
+      <ButtonsAnswers answers={props.correctAnswers} />
 
       {/* <ButtonsCorrect className="button" answer={props.correct_answer1} /> */}
     </div>

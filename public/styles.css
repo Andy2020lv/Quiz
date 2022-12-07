@@ -52,17 +52,25 @@ hr {
 
 .buttons {
   display: flex;
+  /* width: 70%; */
   flex-direction: row;
-  align-items: flex-end;
   justify-content: space-evenly;
-  width: 70%;
 }
 
-.buttons .button {
+.answer {
   padding: 5px 30px;
   border-radius: 10px;
   color: #293264;
   background-color: #f5f7fb;
+  border-color: #4d5b9e;
+  font-weight: 600;
+  cursor: pointer;
+}
+.buttons .answer .selected {
+  padding: 5px 30px;
+  border-radius: 10px;
+  color: #293264;
+  background-color: #d6dbf5;
   border-color: #4d5b9e;
   font-weight: 600;
   cursor: pointer;
@@ -72,17 +80,45 @@ hr {
   background-color: #d6dbf5;
 }
 
+.score-container {
+  margin-top: 30px;
+  text-align: center;
+  color: #4d5b9e;
+  font-weight: 700;
+}
+
 .checkAnswer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.checkAnswer button {
+.check {
   padding: 20px 40px;
   background-color: #4d5b9e;
   color: #f5f7fb;
   border-radius: 10px;
-  margin-bottom: 40px;
   cursor: pointer;
+}
+
+.check-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.selected {
+  background-color: #d6dbf5;
+}
+
+#correct.answer {
+  background-color: #94d7a2;
+}
+
+#incorrect.answer.selected {
+  background-color: #f8bcbc;
+}
+
+#not-selected.answer {
+  color: rgb(41, 50, 100, 4);
 }
