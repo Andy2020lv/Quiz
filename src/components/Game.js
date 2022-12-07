@@ -1,6 +1,8 @@
 import React from "react";
-import ButtonsIncorrect from "./ButtonsIncorrectAnswer";
-import ButtonsCorrect from "./ButtonsCorrectAnswer";
+import ButtonsAnswers from "./ButtonsAnswers";
+// import ButtonsIncorrect from "./ButtonsAnswers";
+// import ButtonsCorrect from "./ButtonsCorrectAnswer";
+import Question from "./Question";
 
 export default function Game(props) {
   // console.log(props.incorrect_answer);
@@ -14,55 +16,23 @@ export default function Game(props) {
 
   return (
     <div className="game">
-      <h1>{props.question1}</h1>
-      <div className="buttons">
-        {props.answers[0].map((answer) => (
-          <ButtonsIncorrect
-            isHeld={props.isHeld}
-            holdV={props.holdV}
-            className="button"
-            answer={answer}
-            key={props.key}
-          />
-        ))}
-        {/* <ButtonsCorrect className="button" answer={props.correct_answer1} /> */}
-      </div>
-      <hr></hr>
-      <h1>{props.question2}</h1>
-      <div className="buttons">
-        {props.incorrect_answer2.map((answers) => (
-          <ButtonsIncorrect className="button" answer={answers} />
-        ))}
-        <ButtonsCorrect className="button" answer={props.correct_answer2} />
-      </div>
-      <hr></hr>
-      <h1>{props.question3}</h1>
-      <div className="buttons">
-        {props.incorrect_answer3.map((answers) => (
-          <ButtonsIncorrect className="button" answer={answers} />
-        ))}
-        <ButtonsCorrect className="button" answer={props.correct_answer3} />
-      </div>
-      <hr></hr>
-      <h1>{props.question4}</h1>
-      <div className="buttons">
-        {props.incorrect_answer4.map((answers) => (
-          <ButtonsIncorrect className="button" answer={answers} />
-        ))}
-        <ButtonsCorrect className="button" answer={props.correct_answer4} />
-      </div>
-      <hr></hr>
-      <h1>{props.question5}</h1>
-      <div className="buttons">
-        {props.incorrect_answer5.map((answers) => (
-          <ButtonsIncorrect className="button" answer={answers} />
-        ))}
-        <ButtonsCorrect className="button" answer={props.correct_answer5} />
-      </div>
-      <hr></hr>
-      <div className="checkAnswer">
-        <button>Check answers</button>
-      </div>
+      {/* {props.answers.map((answer) => (
+        <ButtonsAnswers
+          questions={props.questions}
+          isHeld={props.isHeld}
+          holdV={props.holdV}
+          className="button"
+          answer={answer}
+          key={props.key}
+        />
+      {/* ))} */}
+
+      <ButtonsAnswers
+        questions=<Question questions={props.questions} />
+        correctAnswers={props.correctAnswers}
+      />
+
+      {/* <ButtonsCorrect className="button" answer={props.correct_answer1} /> */}
     </div>
   );
 }
