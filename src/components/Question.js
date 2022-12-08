@@ -23,21 +23,26 @@ export default function Question(props) {
       }
     }
     return (
-      <button
-        key={nanoid()}
-        id={id}
-        onClick={() => handleClick(answer)}
-        className={answer === props.q.selected ? "answer selected" : "answer"}
-      >
-        {atob(answer)}
-      </button>
+      <div>
+        <button
+          key={nanoid()}
+          id={id}
+          onClick={() => handleClick(answer)}
+          className={answer === props.q.selected ? "answer selected" : "answer"}
+        >
+          {atob(answer)}
+        </button>
+      </div>
     );
   });
 
   return (
     <div className="game">
-      <h1>{atob(props.q.question)}</h1>
-      <div className="buttons">{answerElement}</div>
+      <div className="content">
+        <h1>{atob(props.q.question)}</h1>
+        <div className="buttons">{answerElement}</div>
+        <hr></hr>
+      </div>
     </div>
   );
 }

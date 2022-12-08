@@ -3,9 +3,9 @@ import Begin from "./components/Begin";
 import Question from "./components/Question";
 import { shuffle } from "lodash";
 import { nanoid } from "nanoid";
-
+import blob from "./assets/blob1.svg";
 export default function App() {
-  const [begin, setBegin] = React.useState(false);
+  const [begin, setBegin] = React.useState(true);
   const [count, setCount] = React.useState(0);
   const [questionsData, setQuestionsData] = React.useState([]);
   const [checked, setChecked] = React.useState(false);
@@ -100,7 +100,9 @@ export default function App() {
       })
     : [];
 
-  return (
+  return begin ? (
+    <Begin onClick={handleBegin} />
+  ) : (
     <div>
       {questionElement}
       {checked && (
@@ -116,6 +118,9 @@ export default function App() {
         >
           {checked ? "Play Again" : "Check Answers"}
         </button>
+      </div>
+      <div className="blob">
+        <img className="blob-svg" src={blob} alt="blob"></img>
       </div>
     </div>
   );
