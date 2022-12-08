@@ -103,7 +103,7 @@ export default function App() {
   return begin ? (
     <Begin onClick={handleBegin} />
   ) : (
-    <div>
+    <div className="start-content-container">
       {questionElement}
       {checked && (
         <div className="score-container">

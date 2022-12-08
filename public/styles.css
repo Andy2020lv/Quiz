@@ -1,7 +1,11 @@
 body {
-  margin: 0;
+  /* margin: 0; */
   background-color: #f5f7fb;
+  overflow: hidden;
+  width: 100vw;
+  /* height: 100vh; */
 }
+
 h1 {
   color: #59c1bd;
 }
@@ -45,7 +49,16 @@ hr {
 /* ///////////////////////Game /////////////////// */
 
 .game {
-  padding: 0 15%;
+  /* padding: 0 15%; */
+  /* width: 100vw;
+  height: 100vh; */
+  /* background-color: #f5f7fb; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content {
+  z-index: 10;
 }
 
 hr {
@@ -53,9 +66,8 @@ hr {
 }
 .game h1 {
   margin-bottom: 20px;
-  margin-top: 1rem;
   max-width: 900px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 700;
 }
 
@@ -75,6 +87,7 @@ hr {
   font-weight: 600;
   cursor: pointer;
   margin: 0 20px;
+  font-size: 14px;
 }
 .buttons .answer .selected {
   padding: 5px 30px;
@@ -91,10 +104,17 @@ hr {
 }
 
 .score-container {
-  margin-top: 30px;
+  margin-top: 10px;
   text-align: center;
   color: #3b3486;
   font-weight: 700;
+}
+
+.start-content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .checkAnswer {
@@ -146,15 +166,6 @@ hr {
   transform-origin: 50% 50%;
 }
 
-/* .blob {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50vmax;
-  animation: move1 10s ease-in-out infinite;
-  transform-origin: 50% 50%;
-} */
-
 @keyframes move1 {
   0% {
     transform: scale(1) translate(-60px, -50px);
@@ -173,5 +184,18 @@ hr {
   }
   100% {
     transform: scale(1) translate(-60px, -50px);
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .game h1 {
+    font-size: 0.7rem;
+    max-width: 200px;
+    text-align: center;
+  }
+  .answer {
+    font-size: 0.65rem;
+    margin: 0;
+    padding: 10px;
   }
 }
