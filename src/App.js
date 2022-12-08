@@ -104,23 +104,27 @@ export default function App() {
     <Begin onClick={handleBegin} />
   ) : (
     <div className="start-content-container">
-      {questionElement}
-      {checked && (
-        <div className="score-container">
-          {" "}
-          <span className="score">You scored {correct}/5 correct answers</span>
+      <div className="game">
+        {questionElement}
+        {checked && (
+          <div className="score-container">
+            {" "}
+            <span className="score">
+              You scored {correct}/5 correct answers
+            </span>
+          </div>
+        )}
+        <div className="check-container">
+          <button
+            className="check"
+            onClick={checked ? handlePlayAgain : handleCheck}
+          >
+            {checked ? "Play Again" : "Check Answers"}
+          </button>
         </div>
-      )}
-      <div className="check-container">
-        <button
-          className="check"
-          onClick={checked ? handlePlayAgain : handleCheck}
-        >
-          {checked ? "Play Again" : "Check Answers"}
-        </button>
-      </div>
-      <div className="blob">
-        <img className="blob-svg" src={blob} alt="blob"></img>
+        <div className="blob">
+          <img className="blob-svg" src={blob} alt="blob"></img>
+        </div>
       </div>
     </div>
   );

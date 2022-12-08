@@ -37,7 +37,7 @@ export default function Question(props) {
   });
 
   return (
-    <div className="game">
+    <div className="">
       <div className="content">
         <h1>{atob(props.q.question)}</h1>
         <div className="buttons">{answerElement}</div>
