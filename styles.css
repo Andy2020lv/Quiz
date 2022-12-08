@@ -1,9 +1,11 @@
 body {
-  /* margin: 0; */
   background-color: #f5f7fb;
-  overflow: hidden;
-  width: 100vw;
-  /* height: 100vh; */
+  /* width: 100vw;
+  height: 100vw; */
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -53,9 +55,9 @@ hr {
   /* width: 100vw;
   height: 100vh; */
   /* background-color: #f5f7fb; */
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 .content {
   z-index: 10;
@@ -75,7 +77,7 @@ hr {
   display: flex;
   /* width: 70%; */
   flex-direction: row;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 .answer {
@@ -86,8 +88,9 @@ hr {
   border-color: #3b3486;
   font-weight: 600;
   cursor: pointer;
-  margin: 0 20px;
+  /* margin: 0 20px; */
   font-size: 14px;
+  max-width: 2000px;
 }
 .buttons .answer .selected {
   padding: 5px 30px;
@@ -111,16 +114,31 @@ hr {
 }
 
 .start-content-container {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; */
+  width: 75%;
+  margin: auto;
+}
+
+@media (min-width: 1000px) {
+  .start-content-container {
+    margin-top: 2.5rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .start-content-container {
+    margin-top: 1.5rem;
+  }
 }
 
 .checkAnswer {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* max-width: 2000px; */
 }
 
 .check {
@@ -131,11 +149,11 @@ hr {
   cursor: pointer;
 }
 
-.check-container {
+/* .check-container {
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
-}
+} */
 
 .selected {
   background-color: #a5f1e9;
@@ -187,7 +205,7 @@ hr {
   }
 }
 
-@media only screen and (max-width: 350px) {
+@media (max-width: 350px) {
   .game h1 {
     font-size: 0.7rem;
     max-width: 200px;
@@ -197,5 +215,6 @@ hr {
     font-size: 0.65rem;
     margin: 0;
     padding: 10px;
+    max-width: 100px;
   }
 }
